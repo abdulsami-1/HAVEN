@@ -1,0 +1,34 @@
+<% layout('/layouts/boilerplate') -%>
+    <div class="row justify-content-center py-5 auth-wrapper">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="auth-card shadow-sm">
+                <div class="auth-header">
+                    <i class="fa-solid fa-house-circle-check me-2"></i>
+                    <span>Create your account</span>
+                </div>
+                <form action="/signup" method="POST" class="needs-validation auth-form" novalidate>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" name="username" id="username" class="form-control form-control-lg" placeholder="jhoncarter" required>
+                        <div class="invalid-feedback">Please enter a username.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="you@example.com" required>
+                        <div class="invalid-feedback">Please enter a valid email.</div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" name="password" id="password" class="form-control form-control-lg" placeholder="••••••••" minlength="6" required>
+                        <div class="invalid-feedback">Password must be at least 6 characters.</div>
+                    </div>
+                    <button class="btn btn-haven w-100 btn-lg" type="submit">Sign up</button>
+                    <p class="text-center mt-3 small text-muted">By continuing, you agree to our Terms and acknowledge the Privacy Policy.</p>
+                </form>
+                <div class="text-center mt-3">
+                    <span class="small">Already have an account?</span>
+                    <a href="/login" class="auth-link">Log in</a>
+                </div>
+            </div>
+        </div>
+    </div>

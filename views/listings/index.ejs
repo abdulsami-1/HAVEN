@@ -1,0 +1,93 @@
+<% layout('/layouts/boilerplate') -%>
+    <body>
+        <div class="filter-bar">
+            <div class="filter-scroll">
+                <button class="filter-item" type="button" onclick="location.href='/listings?category=Rooms'">
+                    <span class="filter-icon"><i class="fa-solid fa-bed"></i></span>
+                    <span class="filter-label">Rooms</span>
+                </button>
+                <button class="filter-item" type="button" onclick="location.href='/listings?category=Cities'">
+                    <span class="filter-icon"><i class="fa-solid fa-city"></i></span>
+                    <span class="filter-label">Cities</span>
+                </button>
+                <button class="filter-item" type="button" onclick="location.href='/listings?category=Mountains'">
+                    <span class="filter-icon"><i class="fa-solid fa-mountain-sun"></i></span>
+                    <span class="filter-label">Mountains</span>
+                </button>
+                <button class="filter-item" type="button" onclick="location.href='/listings?category=Pools'">
+                    <span class="filter-icon"><i class="fa-solid fa-water-ladder"></i></span>
+                    <span class="filter-label">Pools</span>
+                </button>
+                <button class="filter-item" type="button" onclick="location.href='/listings?category=Beach'">
+                    <span class="filter-icon"><i class="fa-solid fa-umbrella-beach"></i></span>
+                    <span class="filter-label">Beach</span>
+                </button>
+                <button class="filter-item" type="button" onclick="location.href='/listings?category=Amazing%20views'">
+                    <span class="filter-icon"><i class="fa-solid fa-binoculars"></i></span>
+                    <span class="filter-label">Amazing views</span>
+                </button>
+                <button class="filter-item" type="button" onclick="location.href='/listings?category=Lakefront'">
+                    <span class="filter-icon"><i class="fa-solid fa-water"></i></span>
+                    <span class="filter-label">Lakefront</span>
+                </button>
+                <button class="filter-item" type="button" onclick="location.href='/listings?category=Tiny%20homes'">
+                    <span class="filter-icon"><i class="fa-solid fa-house-chimney"></i></span>
+                    <span class="filter-label">Tiny homes</span>
+                </button>
+                <button class="filter-item" type="button" onclick="location.href='/listings?category=Treehouses'">
+                    <span class="filter-icon"><i class="fa-solid fa-tree"></i></span>
+                    <span class="filter-label">Treehouses</span>
+                </button>
+                <button class="filter-item" type="button" onclick="location.href='/listings?category=Luxe'">
+                    <span class="filter-icon"><i class="fa-solid fa-gem"></i></span>
+                    <span class="filter-label">Luxe</span>
+                </button>
+            </div>
+            <div class="tax-toggle ms-2">
+                <div class="form-check-reverse form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Display prices before taxes</label>
+                </div>
+            </div>
+        </div>
+
+        <% if (allListings.length === 0) { %>
+        <div class="card border-0 shadow-sm mt-4" style="border-radius:16px;">
+            <div class="card-body text-center py-5">
+                <div class="mb-3"><i class="fa-regular fa-face-frown" style="font-size:32px;color:#717171;"></i></div>
+                <h5 class="mb-2">No stays found</h5>
+                <p class="text-muted mb-3">
+                    <% if (searchQ && searchQ.trim()) { %>
+                        We couldn't find results for "<%= searchQ %>".
+                    <% } else if (selectedCategory) { %>
+                        No listings in "<%= selectedCategory %>" yet.
+                    <% } else { %>
+                        Try adjusting your search or filters.
+                    <% } %>
+                </p>
+                <a href="/listings" class="btn btn-haven">Clear search</a>
+            </div>
+        </div>
+        <% } else { %>
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3 listings-grid">
+            <% for (let listing of allListings) { %>
+                <a href="/listings/<%= listing._id %>" class="listing-link">
+                    <div class="card col listing-card">
+                        <div class="listing-media">
+                            <img src="<%= listing.image.url %>" class="card-img-top listing-img" alt="listing image" loading="lazy">
+                        </div>
+                        <div class="card-img-overlay"></div>
+                        <div class="card-body">
+                            <div class="listing-meta">
+                                <div class="listing-title"><%= listing.title %></div>
+                                <div class="listing-price">$<%= Math.round(listing.price * 1.15).toLocaleString('en-US') %> <span class="per">night</span> <i class="tax-info">+15% GST</i></div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <% } %>
+        </div>
+        <% } %>
+
+
+    </body>

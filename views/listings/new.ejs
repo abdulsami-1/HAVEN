@@ -1,0 +1,75 @@
+<% layout('/layouts/boilerplate') -%>
+        <div class="row justify-content-center py-4 host-wrapper">
+            <div class="col-12 col-lg-10 col-xl-8">
+                <div class="host-card shadow-sm ">
+                    <div class="host-header">
+                        <i class="fa-solid fa-house-circle-check me-2"></i>
+                        <span class="title-n">List your haven</span>
+                    </div>
+                <form method="POST" action="/listings" novalidate class="needs-validation host-form" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" name="listing[title]" placeholder="Beautiful lakefront cabin" class="form-control" required>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea type="text" name="listing[description]" placeholder="Enter description"
+                        class="form-control" required></textarea>
+                        <div class="invalid-feedback">Please enter a short description</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Upload Listing Image</label>
+                        <input type="file" name="listing[image]" class="form-control" required>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="mb-3 col-md-4">
+                            <label for="price" class="form-label">Price</label>
+                        <input type="number" min="0" name="listing[price]" placeholder="1000" class="form-control" required>
+                            <div class="invalid-feedback">Price should be valid</div>
+                        </div>
+
+                        <div class="mb-3 col-md-8">
+                            <label for="country" class="form-label">Country</label>
+                            <input type="text" name="listing[country]" placeholder="Enter country" class="form-control"
+                                required>
+                            <div class="invalid-feedback">Country name should be valid</div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="category" class="form-label">Category</label>
+                        <select name="listing[category]" id="category" class="form-select" required>
+                            <option value="" disabled selected>Select a category</option>
+                            <option>Rooms</option>
+                            <option>Cities</option>
+                            <option>Mountains</option>
+                            <option>Pools</option>
+                            <option>Beach</option>
+                            <option>Amazing views</option>
+                            <option>Lakefront</option>
+                            <option>Tiny homes</option>
+                            <option>Treehouses</option>
+                            <option>Luxe</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" name="listing[location]" placeholder="Enter location" class="form-control"
+                            required>
+                        <div class="invalid-feedback">location should be valid</div>
+                    </div>
+
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-haven btn-lg mt-2">Publish</button>
+                    </div>
+
+                </form>
+                </div>
+            </div>
+        </div>

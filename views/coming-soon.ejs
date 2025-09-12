@@ -1,0 +1,17 @@
+<% layout('/layouts/boilerplate') -%>
+
+<div class="row justify-content-center py-5 host-wrapper">
+  <div class="col-12 col-md-8 col-lg-6">
+    <div class="host-card shadow-sm text-center">
+      <div class="host-header justify-content-center">
+        <i class="fa-solid fa-house-circle-check me-2"></i>
+        <span><%= typeof title !== 'undefined' && title ? title : 'Coming soon' %></span>
+      </div>
+      <div class="py-2 text-muted">
+        This page is under construction. Please check back later.
+      </div>
+      <a href="/listings" class="btn btn-haven mt-2">Back to home</a>
+    </div>
+  </div>
+</div>
+
