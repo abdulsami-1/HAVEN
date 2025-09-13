@@ -149,7 +149,6 @@ This project is for educational and portfolio purposes.
 
 **Abdul Sami**
 - GitHub: [@abdulsami-1](https://github.com/abdulsami-1)
-- LinkedIn: [Add Your LinkedIn]
 
 ## 🙏 Acknowledgments
 
