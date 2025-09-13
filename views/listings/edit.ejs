@@ -36,7 +36,7 @@
                 <div class="row">
                     <div class="mb-3 col-md-4">
                         <label for="price" class="form-label">Price</label>
-                        <input type="number" name="listing[price]" value="<%= listing.price %>" class="form-control"
+                        <input type="number" min="0" name="listing[price]" value="<%= listing.price %>" class="form-control"
                             required>
                         <div class="invalid-feedback">Price should be valid</div>
                     </div>
@@ -64,6 +64,7 @@
                         <option <%= listing.category === 'Treehouses' ? 'selected' : '' %>>Treehouses</option>
                         <option <%= listing.category === 'Luxe' ? 'selected' : '' %>>Luxe</option>
                     </select>
+                    <div class="invalid-feedback">Please select a category</div>
                 </div>
 
                 <div class="mb-3">
