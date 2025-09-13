@@ -98,6 +98,11 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+// Favicon route
+app.get('/favicon.ico', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'images', 'haven-favicon.svg'));
+});
+
 // Global middleware
 app.use((req, res, next) => {
     res.locals.success = req.flash('success');
