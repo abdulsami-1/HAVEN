@@ -57,18 +57,12 @@ A full-stack web application for discovering and booking unique travel accommoda
 
 ### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/abdulsami-1/HAVEN.git
-   cd HAVEN
-   ```
-
-2. **Install dependencies**
+1. **Install dependencies**
    ```bash
    npm install
    ```
 
-3. **Set up environment variables**
+2. **Set up environment variables**
    Create a `.env` file in the root directory:
    ```env
    # Database
@@ -86,7 +80,7 @@ A full-stack web application for discovering and booking unique travel accommoda
    SECRET=your_session_secret
    ```
 
-4. **Start the application**
+3. **Start the application**
    ```bash
    # Development
    npm run dev
@@ -95,7 +89,7 @@ A full-stack web application for discovering and booking unique travel accommoda
    npm start
    ```
 
-5. **Visit the app**
+4. **Visit the app**
    Open [http://localhost:8080](http://localhost:8080) in your browser
 
 ## 📁 Project Structure
@@ -149,7 +143,7 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 ## 📝 License
 
-This project is [MIT](LICENSE) licensed.
+This project is for educational and portfolio purposes.
 
 ## 👨‍💻 Author
 
