@@ -2,11 +2,9 @@
 
 A full-stack web application for discovering and booking unique travel accommodations, built with modern web technologies.
 
-![Haven Screenshot](https://via.placeholder.com/800x400/ff385c/ffffff?text=Haven+Travel+Platform)
-
 ## 🌐 Live Demo
 
-**🔗 [Visit Haven Live](YOUR_VERCEL_URL_HERE)**
+**🔗 https://haven-wheat.vercel.app/listings**
 
 ## ✨ Features
 
