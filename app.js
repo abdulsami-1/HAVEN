@@ -3,6 +3,13 @@ if (process.env.NODE_ENV !== "production") {
     require('dotenv').config();
 }
 
+process.on('uncaughtException', (err) => {
+    console.error('UNCAUGHT EXCEPTION:', err.message, '\n', err.stack);
+});
+process.on('unhandledRejection', (reason) => {
+    console.error('UNHANDLED REJECTION:', reason);
+});
+
 // Dependencies
 const express = require('express');
 const app = express();
