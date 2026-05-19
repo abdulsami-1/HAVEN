@@ -1,0 +1,141 @@
+<nav class="navbar navbar-expand-md navbar-haven sticky-top">
+  <div class="container">
+    <!-- Mobile: Top row with logo left, actions right -->
+    <div class="navbar-top-row d-flex align-items-center w-100">
+      <a class="navbar-brand d-flex align-items-center" href="/listings">
+        <i class="fa-solid fa-house-circle-check me-1"></i>
+        <span class="brand-text title-n">Haven</span>
+      </a>
+
+      <!-- Desktop: Search bar in center -->
+      <div class="d-none d-md-flex flex-grow-1 justify-content-center search-center">
+        <% if (typeof showSearch !== 'undefined' && showSearch) { %>
+        <form class="search-pill" action="/listings" method="GET">
+          <button type="button" class="pill-segment" id="anywhereBtn">Anywhere</button>
+          <span class="pill-divider d-none d-sm-inline"></span>
+          <button type="button" class="pill-segment d-none d-lg-inline" id="anyweekBtn">Any week</button>
+          <span class="pill-divider d-none d-lg-inline"></span>
+          <input class="pill-input" type="text" name="q" value="<%= typeof searchQ !== 'undefined' ? searchQ : '' %>" placeholder="Search listings..." aria-label="Search" autocomplete="off" />
+          <input type="hidden" name="loc" id="locField" value="<%= typeof loc !== 'undefined' ? loc : '' %>">
+          <input type="hidden" name="start" id="startField" value="<%= typeof start !== 'undefined' ? start : '' %>">
+          <input type="hidden" name="end" id="endField" value="<%= typeof end !== 'undefined' ? end : '' %>">
+          <button class="pill-search" type="submit" aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+        <% } %>
+      </div>
+
+      <!-- Mobile: Compact right-side actions -->
+      <div class="mobile-actions d-md-none d-flex align-items-center">
+        <a class="mobile-host-link" href="/listings/new" title="Host your haven">
+          <i class="fa-solid fa-home"></i>
+        </a>
+        
+        <% if(!currUser){ %>
+          <a class="mobile-user-link" href="/login" title="Login">
+            <i class="fa-regular fa-user"></i>
+          </a>
+        <% } else { %>
+          <a class="mobile-user-link" href="/profile" title="Profile">
+            <i class="fa-regular fa-user"></i>
+          </a>
+        <% } %>
+        
+        <!-- Mobile Menu Dropdown -->
+        <div class="position-relative" id="mobileMenuWrapper">
+          <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobilePopover">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="user-popover mobile-popover" id="mobilePopover" role="menu" aria-hidden="true">
+            <% if(!currUser){ %>
+              <div class="menu-group">
+                <a class="menu-item bold" href="/signup">Sign up</a>
+                <a class="menu-item" href="/login">Log in</a>
+              </div>
+              <div class="menu-divider"></div>
+              <div class="menu-group">
+                <a class="menu-item" href="/help">Help</a>
+              </div>
+            <% } else { %>
+              <div class="menu-group">
+                <a class="menu-item bold" href="/profile">Profile</a>
+                <a class="menu-item" href="/trips">Trips</a>
+              </div>
+              <div class="menu-divider"></div>
+              <div class="menu-group">
+                <a class="menu-item" href="/help">Help</a>
+                <a class="menu-item" href="/logout">Log out</a>
+              </div>
+            <% } %>
+          </div>
+        </div>
+      </div>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+        <ul class="navbar-nav align-items-center nav-actions">
+          <li class="nav-item">
+            <a class="nav-link" href="/listings/new">Host your haven</a>
+          </li>
+          <li class="nav-item d-none d-md-block">
+            <button class="btn globe-btn" type="button" aria-label="Change language">
+              <i class="fa-solid fa-globe"></i>
+            </button>
+          </li>
+          <li class="nav-item position-relative" id="userMenuWrapper">
+            <% if(!currUser){ %>
+              <button class="btn user-menu" id="userMenuBtn" type="button" aria-label="User menu" aria-expanded="false" aria-controls="userPopover">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-regular fa-user"></i>
+              </button>
+              <div class="user-popover" id="userPopover" role="menu" aria-hidden="true">
+                <div class="menu-group">
+                  <a class="menu-item bold" href="/signup">Sign up</a>
+                  <a class="menu-item" href="/login">Log in</a>
+                </div>
+                <div class="menu-divider"></div>
+                <div class="menu-group">
+                  <a class="menu-item" href="/listings/new">Host your haven</a>
+                  <a class="menu-item" href="/help">Help</a>
+                </div>
+              </div>
+            <% } else { %>
+              <button class="btn user-menu" id="userMenuBtn" type="button" aria-label="User menu" aria-expanded="false" aria-controls="userPopover">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-regular fa-user"></i>
+              </button>
+              <div class="user-popover" id="userPopover" role="menu" aria-hidden="true">
+                <div class="menu-group">
+                  <a class="menu-item bold" href="/profile">Profile</a>
+                  <a class="menu-item" href="/trips">Trips</a>
+                </div>
+                <div class="menu-divider"></div>
+                <div class="menu-group">
+                  <a class="menu-item" href="/listings/new">Host your haven</a>
+                  <a class="menu-item" href="/help">Help</a>
+                  <a class="menu-item" href="/logout">Log out</a>
+                </div>
+              </div>
+            <% } %>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Mobile: Search bar below navbar -->
+    <div class="mobile-search-row d-md-none w-100">
+      <% if (typeof showSearch !== 'undefined' && showSearch) { %>
+      <form class="search-pill mobile-search-pill" action="/listings" method="GET">
+        <button type="button" class="pill-segment" id="mobileAnywhereBtn">Anywhere</button>
+        <input class="pill-input" type="text" name="q" value="<%= typeof searchQ !== 'undefined' ? searchQ : '' %>" placeholder="Search..." aria-label="Search" autocomplete="off" />
+        <input type="hidden" name="loc" id="mobileLocField" value="<%= typeof loc !== 'undefined' ? loc : '' %>">
+        <input type="hidden" name="start" id="mobileStartField" value="<%= typeof start !== 'undefined' ? start : '' %>">
+        <input type="hidden" name="end" id="mobileEndField" value="<%= typeof end !== 'undefined' ? end : '' %>">
+        <button class="pill-search" type="submit" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+      <% } %>
+    </div>
+  </div>
+</nav>

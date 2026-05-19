@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="16" fill="#ff385c"/>
+  
+  <!-- House shape -->
+  <path d="M16 6L9 12v12c0 0.5 0.4 1 1 1h12c0.6 0 1-0.5 1-1V12l-7-6z" fill="white"/>
+  
+  <!-- House roof -->
+  <path d="M16 6L9 12h14L16 6z" fill="white"/>
+  
+  <!-- Door -->
+  <rect x="14.5" y="19" width="3" height="5" fill="#ff385c" rx="0.5"/>
+  
+  <!-- Windows -->
+  <rect x="11" y="15" width="2.5" height="2.5" fill="#ff385c" rx="0.2"/>
+  <rect x="18.5" y="15" width="2.5" height="2.5" fill="#ff385c" rx="0.2"/>
+  
+  <!-- Checkmark -->
+  <circle cx="22" cy="10" r="4" fill="#28a745"/>
+  <path d="M20.2 10l1.2 1.2 2.4-2.4" stroke="white" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

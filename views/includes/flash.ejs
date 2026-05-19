@@ -1,0 +1,20 @@
+<% if(success && success.length){ %>
+    <div class="alert flash-alert alert-success alert-dismissible fade show col-12 col-md-8 col-lg-6 mx-auto" role="alert" data-auto-dismiss="true">
+        <div class="d-flex align-items-start gap-2">
+            <i class="fa-solid fa-circle-check mt-1 text-success"></i>
+            <div class="flex-grow-1"><%= success %></div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+<% } %>
+
+
+<% if(error && error.length){ %>
+    <div class="alert flash-alert alert-danger alert-dismissible fade show col-12 col-md-8 col-lg-6 mx-auto" role="alert" data-auto-dismiss="true">
+        <div class="d-flex align-items-start gap-2">
+            <i class="fa-solid fa-triangle-exclamation mt-1 text-danger"></i>
+            <div class="flex-grow-1"><%= error %></div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+<% } %>

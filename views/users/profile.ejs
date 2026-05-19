@@ -1,0 +1,40 @@
+<% layout('/layouts/boilerplate') -%>
+
+<div class="row justify-content-center py-4 host-wrapper">
+  <div class="col-12 col-lg-8">
+    <div class="host-card shadow-sm">
+      <div class="host-header">
+        <i class="fa-solid fa-shield-heart me-2"></i>
+        <span>Your profile</span>
+      </div>
+      <div class="d-flex align-items-center gap-3 mb-3">
+        <div class="rounded-circle bg-light d-inline-flex align-items-center justify-content-center" style="width:56px;height:56px;">
+          <i class="fa-regular fa-user" style="font-size:24px;color:#717171;"></i>
+        </div>
+        <div>
+          <div class="fw-bold"><%= user.username %></div>
+          <div class="text-muted small"><%= user.email %></div>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-12 col-md-6">
+          <div class="card border-0 shadow-sm" style="border-radius:14px;">
+            <div class="card-body">
+              <div class="fw-semibold mb-1">Account</div>
+              <div class="text-muted small">Manage your login and security</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card border-0 shadow-sm" style="border-radius:14px;">
+            <div class="card-body">
+              <div class="fw-semibold mb-1">Hosting</div>
+              <div class="text-muted small">List your place and manage listings</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

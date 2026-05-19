@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <circle cx="8" cy="8" r="8" fill="#ff385c"/>
+  
+  <!-- House -->
+  <path d="M8 3L4.5 6v6c0 0.3 0.2 0.5 0.5 0.5h6c0.3 0 0.5-0.2 0.5-0.5V6L8 3z" fill="white"/>
+  
+  <!-- Door -->
+  <rect x="7.2" y="9.5" width="1.6" height="2.5" fill="#ff385c" rx="0.2"/>
+  
+  <!-- Windows -->
+  <rect x="5.5" y="7.5" width="1" height="1" fill="#ff385c" rx="0.1"/>
+  <rect x="9.5" y="7.5" width="1" height="1" fill="#ff385c" rx="0.1"/>
+  
+  <!-- Small checkmark -->
+  <circle cx="11" cy="5" r="2" fill="#28a745"/>
+  <path d="M10.1 5l0.6 0.6 1.2-1.2" stroke="white" stroke-width="0.6" fill="none" stroke-linecap="round"/>
+</svg>
